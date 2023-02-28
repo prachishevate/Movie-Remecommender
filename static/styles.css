@@ -1,8 +1,17 @@
 h1{
     color: white;
-    font-size: 50px;
+    font-size: 100px;
     font-weight: bold;
     color: #000000;
+    
+      
+}
+h2{
+    color:black;
+    font-size: 100px;
+    font-weight: bold;
+    color: #000000;
+    
       
 }
 
@@ -13,8 +22,10 @@ body{
     text-align: center;
     font-size: small;
     font-family: fantasy;
-    background-image: url("https://www.dreamstime.com/stock-illustration-cinema-screen-empty-seats-projector-blank-image53367323");
+    /* background-image: url("https://www.dreamstime.com/stock-illustration-cinema-screen-empty-seats-projector-blank-image53367323"); */
+    background-image: url("https://miro.medium.com/v2/resize:fit:720/format:webp/1*kNj8AqQ2YA8QmzVAGbo_bg.jpeg");
     background-size: cover;
+    background-color: bisque;
 }
 
 button{
@@ -36,17 +47,17 @@ input[type=number]{width:50px}
 ul{
     display: inline-block;
     text-align: center;
+    font-size: medium;
     }
 
 .movies li{
-    padding: 50px;
+    padding: 5px;
 }
 
-.movies li:nth-child(odd){background-color: grey;
+.movies li:nth-child{background-color: grey;
 }
 
-.movies li:nth-child(even){background-color: white;
-}
+
 
 a{color: white;
     transition: all 3s;
@@ -65,7 +76,14 @@ img:hover{
     /*transform: rotate(5deg) scale(1.2);*/
 }
 
-p,h2{color: white;
-font-size: 20px;}
-    
+p,h2{color: black;
+font-size: 30px;}
+
+.title h1 {
+    color: gray;
+}
+
+.movie-dropdown {
+    padding: 30px;
+}
     

@@ -5,32 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Movie Recommender System </title>
-    <link rel="stylesheet" href=<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>>
 </head>
 <body>
-    <center><h1>Movie Recommender System by {{name}}</h1></center>
-    <p>Recommended must watch movies for You</p>
-    <form action = '/recommend'>
-        <select name="algorithm">
-        <option value="Random">Random</option>
-        <option value="NMF">NMF</option>
-        <option value="Cosine similarity">Cosine similarity</option>
-        </select>
-        <br>
-        {% for indx in range(3) %}
-        <input type="text" name="title" placeholder="Enter Movie Name" required list="movie_lst">
-        <input type="number" name="Ratings" placeholder="1-5" min="1" max="5" required>
-        <br><br>
-        {% endfor %}
-        <button type="submit">Show Recommendations</button>   
-    </form>
+    <div class="container">
+        <center class="title">
+            <h1>Movie Recommender System by {{name}}</h1>
+        </center>
+        <p>Recommended must watch movies for You</p>
+        <form action = '/recommend'>
+            <div class="row">
+                <select name="algorithm"  class="form-select">
+                    <option value="Random">Random</option>
+                    <option value="NMF">NMF</option>
+                    <option value="Cosine similarity">Cosine similarity</option>
+                </select>
+            </div>
+            {% for indx in range(3) %}
+            <div class="row">
+                <div class="movie-dropdown float-start">
+                    <input type="text" name="title" placeholder="Enter Movie Name" required list="movie_lst">
+                    <input type="number" name="Ratings" placeholder="1-5" min="1" max="5" required>
+                </div>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-outline-primary">Show Recommendations</button>   
+        </form>
 
-    <datalist id="movie_lst">
-        {%for mov in movies%}
-        <option value="{{mov}}"></option>
-        {%endfor%}
-    </datalist>
+        <datalist id="movie_lst">
+            {%for mov in movies%}
+            <option value="{{mov}}"></option>
+            {%endfor%}
+        </datalist>
+    </div>
     <!-- <a href="/recommend">Show recommendation</a> -->
    
 </body>

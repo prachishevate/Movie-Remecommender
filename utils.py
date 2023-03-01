@@ -13,6 +13,10 @@ import pandas as pd
 import numpy as np
 
 movies = pd.read_csv('data/movies.csv') 
+ratings = pd.read_csv('data/ratings.csv')
+
+
+
 
 def movie_to_id(string_titles):
     '''

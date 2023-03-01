@@ -1,5 +1,5 @@
 from flask import Flask,render_template, request
-from recommender import recommend_random, recommend_with_NMF, recommend_with_cosine_similarity
+from recommender import recommend_random, recommend_with_NMF, recommend_neighbourhood
 from utils import movie_to_id, movies
 app = Flask(__name__)
 
@@ -21,8 +21,8 @@ def recommendations():
         recs = recommend_with_NMF(query)
     elif request.args['algorithm']=='Random':
         recs = recommend_random()
-    elif request.args['algorithm']=='Cosine similarity':
-        recs = recommend_with_cosine_similarity(query)
+    elif request.args['algorithm']=='K-Neighbours':
+        recs = recommend_neighbourhood(query)
     else:
         return f"Function not defined"
     
